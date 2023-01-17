@@ -75,6 +75,12 @@
     <Compile Include="src\views\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\views\ParkingSpace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\views\ParkingSpace.Designer.cs">
+      <DependentUpon>ParkingSpace.cs</DependentUpon>
+    </Compile>
     <Compile Include="_E_ApartmentsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\views\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\views\ParkingSpace.resx">
+      <DependentUpon>ParkingSpace.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
