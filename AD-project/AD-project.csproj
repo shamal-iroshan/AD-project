@@ -48,7 +48,10 @@
   <ItemGroup>
     <Compile Include="src\controllers\LoginController.cs" />
     <Compile Include="src\db\DBConnection.cs" />
+    <Compile Include="src\models\ApartmentClassModel.cs" />
+    <Compile Include="src\models\BuildingModel.cs" />
     <Compile Include="src\models\LoginModel.cs" />
+    <Compile Include="src\models\ParkingSpaceModel.cs" />
     <Compile Include="src\views\Apartment.cs">
       <SubType>Form</SubType>
     </Compile>

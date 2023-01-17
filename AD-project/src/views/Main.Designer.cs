@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.pnlSide = new System.Windows.Forms.Panel();
-            this.pnlTop = new System.Windows.Forms.Panel();
-            this.pnlMain = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.btnLease = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.btnApartment = new System.Windows.Forms.Button();
             this.pnlSide.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
@@ -41,6 +42,7 @@
             // pnlSide
             // 
             this.pnlSide.BackColor = System.Drawing.Color.White;
+            this.pnlSide.Controls.Add(this.btnApartment);
             this.pnlSide.Controls.Add(this.btnLease);
             this.pnlSide.Controls.Add(this.panel2);
             this.pnlSide.Dock = System.Windows.Forms.DockStyle.Left;
@@ -48,6 +50,32 @@
             this.pnlSide.Name = "pnlSide";
             this.pnlSide.Size = new System.Drawing.Size(278, 790);
             this.pnlSide.TabIndex = 0;
+            // 
+            // btnLease
+            // 
+            this.btnLease.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLease.FlatAppearance.BorderSize = 0;
+            this.btnLease.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(179)))), ((int)(((byte)(250)))));
+            this.btnLease.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLease.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLease.Image = global::AD_project.Properties.Resources.home;
+            this.btnLease.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLease.Location = new System.Drawing.Point(1, 238);
+            this.btnLease.Name = "btnLease";
+            this.btnLease.Size = new System.Drawing.Size(277, 60);
+            this.btnLease.TabIndex = 0;
+            this.btnLease.Text = "Lease";
+            this.btnLease.UseVisualStyleBackColor = true;
+            this.btnLease.Click += new System.EventHandler(this.btnLease_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::AD_project.Properties.Resources._20945169;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(27, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 190);
+            this.panel2.TabIndex = 0;
             // 
             // pnlTop
             // 
@@ -59,23 +87,6 @@
             this.pnlTop.Size = new System.Drawing.Size(1052, 44);
             this.pnlTop.TabIndex = 1;
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
-            // 
-            // pnlMain
-            // 
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(278, 44);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1052, 746);
-            this.pnlMain.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::AD_project.Properties.Resources._20945169;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(27, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 190);
-            this.panel2.TabIndex = 0;
             // 
             // btnClose
             // 
@@ -93,21 +104,30 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnLease
+            // pnlMain
             // 
-            this.btnLease.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLease.FlatAppearance.BorderSize = 0;
-            this.btnLease.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(179)))), ((int)(((byte)(250)))));
-            this.btnLease.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLease.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLease.Image = global::AD_project.Properties.Resources.home;
-            this.btnLease.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLease.Location = new System.Drawing.Point(1, 238);
-            this.btnLease.Name = "btnLease";
-            this.btnLease.Size = new System.Drawing.Size(277, 60);
-            this.btnLease.TabIndex = 0;
-            this.btnLease.Text = "Lease";
-            this.btnLease.UseVisualStyleBackColor = true;
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(278, 44);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(1052, 746);
+            this.pnlMain.TabIndex = 2;
+            // 
+            // btnApartment
+            // 
+            this.btnApartment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnApartment.FlatAppearance.BorderSize = 0;
+            this.btnApartment.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(179)))), ((int)(((byte)(250)))));
+            this.btnApartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApartment.Image = global::AD_project.Properties.Resources.apartment;
+            this.btnApartment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnApartment.Location = new System.Drawing.Point(1, 304);
+            this.btnApartment.Name = "btnApartment";
+            this.btnApartment.Size = new System.Drawing.Size(277, 60);
+            this.btnApartment.TabIndex = 1;
+            this.btnApartment.Text = "Apartment";
+            this.btnApartment.UseVisualStyleBackColor = true;
+            this.btnApartment.Click += new System.EventHandler(this.btnApartment_Click);
             // 
             // Main
             // 
@@ -136,5 +156,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnLease;
+        private System.Windows.Forms.Button btnApartment;
     }
 }

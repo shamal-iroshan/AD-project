@@ -61,5 +61,15 @@ namespace AD_project.src.views
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+
+        private void btnLease_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnApartment_Click(object sender, EventArgs e)
+        {
+            loadForm(new Apartment(this));
+        }
     }
 }

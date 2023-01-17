@@ -33,9 +33,9 @@
             this.cbBuilding = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbClass = new System.Windows.Forms.ComboBox();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnMangeBuilding = new System.Windows.Forms.Button();
+            this.btnMangeClasses = new System.Windows.Forms.Button();
+            this.btnManageParkingSlot = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cbParking = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -122,50 +122,53 @@
             this.cbClass.Size = new System.Drawing.Size(322, 28);
             this.cbClass.TabIndex = 24;
             // 
-            // btnClear
+            // btnMangeBuilding
             // 
-            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.btnClear.FlatAppearance.BorderSize = 3;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.btnClear.Location = new System.Drawing.Point(344, 67);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(142, 39);
-            this.btnClear.TabIndex = 26;
-            this.btnClear.Text = "Manage Building";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnMangeBuilding.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMangeBuilding.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
+            this.btnMangeBuilding.FlatAppearance.BorderSize = 3;
+            this.btnMangeBuilding.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMangeBuilding.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMangeBuilding.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
+            this.btnMangeBuilding.Location = new System.Drawing.Point(344, 67);
+            this.btnMangeBuilding.Name = "btnMangeBuilding";
+            this.btnMangeBuilding.Size = new System.Drawing.Size(142, 39);
+            this.btnMangeBuilding.TabIndex = 26;
+            this.btnMangeBuilding.Text = "Manage Building";
+            this.btnMangeBuilding.UseVisualStyleBackColor = true;
+            this.btnMangeBuilding.Click += new System.EventHandler(this.btnMangeBuilding_Click);
             // 
-            // button1
+            // btnMangeClasses
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.button1.FlatAppearance.BorderSize = 3;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.button1.Location = new System.Drawing.Point(845, 67);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 39);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Manage Classes";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnMangeClasses.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMangeClasses.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
+            this.btnMangeClasses.FlatAppearance.BorderSize = 3;
+            this.btnMangeClasses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMangeClasses.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMangeClasses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
+            this.btnMangeClasses.Location = new System.Drawing.Point(845, 67);
+            this.btnMangeClasses.Name = "btnMangeClasses";
+            this.btnMangeClasses.Size = new System.Drawing.Size(142, 39);
+            this.btnMangeClasses.TabIndex = 27;
+            this.btnMangeClasses.Text = "Manage Classes";
+            this.btnMangeClasses.UseVisualStyleBackColor = true;
+            this.btnMangeClasses.Click += new System.EventHandler(this.btnMangeClasses_Click);
             // 
-            // button2
+            // btnManageParkingSlot
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.button2.FlatAppearance.BorderSize = 3;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.button2.Location = new System.Drawing.Point(344, 135);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(142, 39);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "Manage Parking";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnManageParkingSlot.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnManageParkingSlot.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
+            this.btnManageParkingSlot.FlatAppearance.BorderSize = 3;
+            this.btnManageParkingSlot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageParkingSlot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageParkingSlot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
+            this.btnManageParkingSlot.Location = new System.Drawing.Point(344, 135);
+            this.btnManageParkingSlot.Name = "btnManageParkingSlot";
+            this.btnManageParkingSlot.Size = new System.Drawing.Size(142, 39);
+            this.btnManageParkingSlot.TabIndex = 30;
+            this.btnManageParkingSlot.Text = "Manage Parking";
+            this.btnManageParkingSlot.UseVisualStyleBackColor = true;
+            this.btnManageParkingSlot.Click += new System.EventHandler(this.btnManageParkingSlot_Click);
             // 
             // label4
             // 
@@ -467,11 +470,11 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbState);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnManageParkingSlot);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbParking);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnMangeClasses);
+            this.Controls.Add(this.btnMangeBuilding);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbClass);
             this.Controls.Add(this.label3);
@@ -493,9 +496,9 @@
         private System.Windows.Forms.ComboBox cbBuilding;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbClass;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnMangeBuilding;
+        private System.Windows.Forms.Button btnMangeClasses;
+        private System.Windows.Forms.Button btnManageParkingSlot;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbParking;
         private System.Windows.Forms.Label label5;

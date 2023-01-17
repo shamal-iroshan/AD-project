@@ -12,9 +12,17 @@ namespace AD_project.src.views
 {
     public partial class ParkingSpace : Form
     {
-        public ParkingSpace()
+        Main main;
+
+        public ParkingSpace(Main main)
         {
             InitializeComponent();
+            this.main = main;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            main.loadForm(new Apartment(main));
         }
     }
 }

@@ -12,9 +12,17 @@ namespace AD_project.src.views
 {
     public partial class Building : Form
     {
-        public Building()
+        Main main;
+
+        public Building(Main main)
         {
             InitializeComponent();
+            this.main = main;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            main.loadForm(new Apartment(main));
         }
     }
 }
