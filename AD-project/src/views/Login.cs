@@ -1,6 +1,7 @@
 ﻿using AD_project.src.controllers;
 using AD_project.src.db;
 using AD_project.src.models;
+using AD_project.src.views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -58,7 +59,9 @@ namespace AD_project
                 Boolean loginSuccess = new LoginController().checkLogin(model);
                 if (loginSuccess)
                 {
-                    MessageBox.Show("Login success");
+                    Hide();
+                    Main main = new Main();
+                    main.Show();
                 } else
                 {
                     MessageBox.Show("Login failed");
