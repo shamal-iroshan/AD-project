@@ -49,6 +49,12 @@
     <Compile Include="src\controllers\LoginController.cs" />
     <Compile Include="src\db\DBConnection.cs" />
     <Compile Include="src\models\LoginModel.cs" />
+    <Compile Include="src\views\Apartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\views\Apartment.Designer.cs">
+      <DependentUpon>Apartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\views\ApartmentClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="src\views\Apartment.resx">
+      <DependentUpon>Apartment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\views\ApartmentClass.resx">
       <DependentUpon>ApartmentClass.cs</DependentUpon>
     </EmbeddedResource>
