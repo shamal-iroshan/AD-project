@@ -90,7 +90,7 @@
             this.txtUserName.Location = new System.Drawing.Point(425, 184);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(419, 26);
-            this.txtUserName.TabIndex = 4;
+            this.txtUserName.TabIndex = 0;
             // 
             // txtPassword
             // 
@@ -98,7 +98,7 @@
             this.txtPassword.Location = new System.Drawing.Point(425, 257);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(419, 26);
-            this.txtPassword.TabIndex = 6;
+            this.txtPassword.TabIndex = 1;
             // 
             // label3
             // 
@@ -120,6 +120,7 @@
             this.cbShowPassword.TabIndex = 7;
             this.cbShowPassword.Text = "Show Password";
             this.cbShowPassword.UseVisualStyleBackColor = true;
+            this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
             // 
             // btnLogin
             // 
@@ -132,9 +133,10 @@
             this.btnLogin.Location = new System.Drawing.Point(425, 359);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(419, 42);
-            this.btnLogin.TabIndex = 8;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // Login
             // 
@@ -155,6 +157,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
