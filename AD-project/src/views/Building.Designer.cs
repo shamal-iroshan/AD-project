@@ -37,8 +37,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.dgvBuilding = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuilding)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,6 +97,7 @@
             this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnUpdate
             // 
@@ -114,6 +113,7 @@
             this.btnUpdate.TabIndex = 14;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -129,6 +129,7 @@
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClear
             // 
@@ -150,28 +151,12 @@
             this.dgvBuilding.AllowUserToAddRows = false;
             this.dgvBuilding.AllowUserToDeleteRows = false;
             this.dgvBuilding.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBuilding.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Location});
             this.dgvBuilding.Location = new System.Drawing.Point(15, 175);
             this.dgvBuilding.Name = "dgvBuilding";
             this.dgvBuilding.ReadOnly = true;
             this.dgvBuilding.Size = new System.Drawing.Size(993, 525);
             this.dgvBuilding.TabIndex = 16;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 200;
-            // 
-            // Location
-            // 
-            this.Location.HeaderText = "Location";
-            this.Location.Name = "Location";
-            this.Location.ReadOnly = true;
-            this.Location.Width = 700;
+            this.dgvBuilding.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuilding_CellContentClick);
             // 
             // Building
             // 
@@ -190,6 +175,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Building";
             this.Text = "Building";
+            this.Load += new System.EventHandler(this.Building_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuilding)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -207,7 +193,5 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DataGridView dgvBuilding;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Location;
     }
 }

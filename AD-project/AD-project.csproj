@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,9 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\controllers\BuildingController.cs" />
     <Compile Include="src\controllers\LoginController.cs" />
-    <Compile Include="src\db\DBConnection.cs" />
     <Compile Include="src\models\ApartmentClassModel.cs" />
+    <Compile Include="src\models\ApartmentModel.cs" />
     <Compile Include="src\models\BuildingModel.cs" />
     <Compile Include="src\models\LoginModel.cs" />
     <Compile Include="src\models\ParkingSpaceModel.cs" />

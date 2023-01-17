@@ -22,6 +22,7 @@ namespace AD_project.src.models
 
         public BuildingModel(string id, string location) : this(id)
         {
+            this.id = id;
             this.Location = location;
         }
 

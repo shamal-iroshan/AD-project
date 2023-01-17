@@ -1,5 +1,4 @@
-﻿using AD_project.src.db;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,8 +42,6 @@ namespace AD_project.src.views
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            SqlConnection _connection = DBConnection.getInstance().GetConnection();
-            _connection.Close();
             Close();
         }
 

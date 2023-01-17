@@ -35,9 +35,6 @@
             this.cbClass = new System.Windows.Forms.ComboBox();
             this.btnMangeBuilding = new System.Windows.Forms.Button();
             this.btnMangeClasses = new System.Windows.Forms.Button();
-            this.btnManageParkingSlot = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbParking = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cbState = new System.Windows.Forms.ComboBox();
@@ -56,15 +53,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BuildingID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ParkingID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FloorArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MonthlyRent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RefundableDeposit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaxOcNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +70,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 50);
+            this.label3.Location = new System.Drawing.Point(12, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 23;
@@ -95,7 +83,7 @@
             this.cbBuilding.Items.AddRange(new object[] {
             "Available",
             "Occupied"});
-            this.cbBuilding.Location = new System.Drawing.Point(16, 73);
+            this.cbBuilding.Location = new System.Drawing.Point(16, 96);
             this.cbBuilding.Name = "cbBuilding";
             this.cbBuilding.Size = new System.Drawing.Size(322, 28);
             this.cbBuilding.TabIndex = 22;
@@ -104,7 +92,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(513, 50);
+            this.label2.Location = new System.Drawing.Point(513, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 20);
             this.label2.TabIndex = 25;
@@ -117,7 +105,7 @@
             this.cbClass.Items.AddRange(new object[] {
             "Available",
             "Occupied"});
-            this.cbClass.Location = new System.Drawing.Point(517, 73);
+            this.cbClass.Location = new System.Drawing.Point(517, 96);
             this.cbClass.Name = "cbClass";
             this.cbClass.Size = new System.Drawing.Size(322, 28);
             this.cbClass.TabIndex = 24;
@@ -130,7 +118,7 @@
             this.btnMangeBuilding.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMangeBuilding.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMangeBuilding.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.btnMangeBuilding.Location = new System.Drawing.Point(344, 67);
+            this.btnMangeBuilding.Location = new System.Drawing.Point(344, 90);
             this.btnMangeBuilding.Name = "btnMangeBuilding";
             this.btnMangeBuilding.Size = new System.Drawing.Size(142, 39);
             this.btnMangeBuilding.TabIndex = 26;
@@ -146,7 +134,7 @@
             this.btnMangeClasses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMangeClasses.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMangeClasses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.btnMangeClasses.Location = new System.Drawing.Point(845, 67);
+            this.btnMangeClasses.Location = new System.Drawing.Point(845, 90);
             this.btnMangeClasses.Name = "btnMangeClasses";
             this.btnMangeClasses.Size = new System.Drawing.Size(142, 39);
             this.btnMangeClasses.TabIndex = 27;
@@ -154,48 +142,10 @@
             this.btnMangeClasses.UseVisualStyleBackColor = true;
             this.btnMangeClasses.Click += new System.EventHandler(this.btnMangeClasses_Click);
             // 
-            // btnManageParkingSlot
-            // 
-            this.btnManageParkingSlot.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnManageParkingSlot.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.btnManageParkingSlot.FlatAppearance.BorderSize = 3;
-            this.btnManageParkingSlot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageParkingSlot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageParkingSlot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.btnManageParkingSlot.Location = new System.Drawing.Point(344, 135);
-            this.btnManageParkingSlot.Name = "btnManageParkingSlot";
-            this.btnManageParkingSlot.Size = new System.Drawing.Size(142, 39);
-            this.btnManageParkingSlot.TabIndex = 30;
-            this.btnManageParkingSlot.Text = "Manage Parking";
-            this.btnManageParkingSlot.UseVisualStyleBackColor = true;
-            this.btnManageParkingSlot.Click += new System.EventHandler(this.btnManageParkingSlot_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 20);
-            this.label4.TabIndex = 29;
-            this.label4.Text = "Parking Slot";
-            // 
-            // cbParking
-            // 
-            this.cbParking.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbParking.FormattingEnabled = true;
-            this.cbParking.Items.AddRange(new object[] {
-            "Available",
-            "Occupied"});
-            this.cbParking.Location = new System.Drawing.Point(16, 141);
-            this.cbParking.Name = "cbParking";
-            this.cbParking.Size = new System.Drawing.Size(322, 28);
-            this.cbParking.TabIndex = 28;
-            // 
             // label5
             // 
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Location = new System.Drawing.Point(12, 183);
+            this.label5.Location = new System.Drawing.Point(16, 165);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(978, 2);
             this.label5.TabIndex = 31;
@@ -377,75 +327,11 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.BuildingID,
-            this.ClassID,
-            this.ParkingID,
-            this.State,
-            this.FloorArea,
-            this.MonthlyRent,
-            this.RefundableDeposit,
-            this.MaxOcNo});
             this.dataGridView1.Location = new System.Drawing.Point(12, 436);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(975, 225);
             this.dataGridView1.TabIndex = 49;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // BuildingID
-            // 
-            this.BuildingID.HeaderText = "BuildingID";
-            this.BuildingID.Name = "BuildingID";
-            this.BuildingID.ReadOnly = true;
-            // 
-            // ClassID
-            // 
-            this.ClassID.HeaderText = "ClassID";
-            this.ClassID.Name = "ClassID";
-            this.ClassID.ReadOnly = true;
-            // 
-            // ParkingID
-            // 
-            this.ParkingID.HeaderText = "ParkingID";
-            this.ParkingID.Name = "ParkingID";
-            this.ParkingID.ReadOnly = true;
-            // 
-            // State
-            // 
-            this.State.HeaderText = "State";
-            this.State.Name = "State";
-            this.State.ReadOnly = true;
-            // 
-            // FloorArea
-            // 
-            this.FloorArea.HeaderText = "FloorArea";
-            this.FloorArea.Name = "FloorArea";
-            this.FloorArea.ReadOnly = true;
-            // 
-            // MonthlyRent
-            // 
-            this.MonthlyRent.HeaderText = "MonthlyRent";
-            this.MonthlyRent.Name = "MonthlyRent";
-            this.MonthlyRent.ReadOnly = true;
-            // 
-            // RefundableDeposit
-            // 
-            this.RefundableDeposit.HeaderText = "RefundableDeposit";
-            this.RefundableDeposit.Name = "RefundableDeposit";
-            this.RefundableDeposit.ReadOnly = true;
-            // 
-            // MaxOcNo
-            // 
-            this.MaxOcNo.HeaderText = "MaxOcNo";
-            this.MaxOcNo.Name = "MaxOcNo";
-            this.MaxOcNo.ReadOnly = true;
             // 
             // Apartment
             // 
@@ -470,9 +356,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbState);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnManageParkingSlot);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.cbParking);
             this.Controls.Add(this.btnMangeClasses);
             this.Controls.Add(this.btnMangeBuilding);
             this.Controls.Add(this.label2);
@@ -483,6 +366,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Apartment";
             this.Text = "Apartment";
+            this.Load += new System.EventHandler(this.Apartment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -498,9 +382,6 @@
         private System.Windows.Forms.ComboBox cbClass;
         private System.Windows.Forms.Button btnMangeBuilding;
         private System.Windows.Forms.Button btnMangeClasses;
-        private System.Windows.Forms.Button btnManageParkingSlot;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbParking;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbState;
@@ -519,14 +400,5 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BuildingID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClassID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ParkingID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn State;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FloorArea;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MonthlyRent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RefundableDeposit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaxOcNo;
     }
 }

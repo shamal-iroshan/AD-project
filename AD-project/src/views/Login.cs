@@ -1,5 +1,4 @@
 ﻿using AD_project.src.controllers;
-using AD_project.src.db;
 using AD_project.src.models;
 using AD_project.src.views;
 using System;
@@ -24,8 +23,6 @@ namespace AD_project
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            SqlConnection _connection = DBConnection.getInstance().GetConnection();
-            _connection.Close();
             Close();
         }
 
@@ -56,7 +53,7 @@ namespace AD_project
             }
             try
             {
-                Boolean loginSuccess = new LoginController().checkLogin(model);
+                bool loginSuccess = new LoginController().checkLogin(model);
                 if (loginSuccess)
                 {
                     Hide();
