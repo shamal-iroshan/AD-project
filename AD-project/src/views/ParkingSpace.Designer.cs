@@ -38,11 +38,8 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.cmbAvailability = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Availability = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvParkingSapce = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParkingSapce)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -59,6 +56,7 @@
             this.btnSave.TabIndex = 19;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnUpdate
             // 
@@ -150,6 +148,9 @@
             // 
             // cmbAvailability
             // 
+            this.cmbAvailability.AutoCompleteCustomSource.AddRange(new string[] {
+            "Available",
+            "Reserved"});
             this.cmbAvailability.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAvailability.FormattingEnabled = true;
             this.cmbAvailability.Items.AddRange(new object[] {
@@ -170,48 +171,23 @@
             this.label3.TabIndex = 21;
             this.label3.Text = "Availability";
             // 
-            // dataGridView1
+            // dgvParkingSapce
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Fee,
-            this.Availability});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 195);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(992, 505);
-            this.dataGridView1.TabIndex = 22;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 200;
-            // 
-            // Fee
-            // 
-            this.Fee.HeaderText = "Fee";
-            this.Fee.Name = "Fee";
-            this.Fee.ReadOnly = true;
-            this.Fee.Width = 300;
-            // 
-            // Availability
-            // 
-            this.Availability.HeaderText = "Availability";
-            this.Availability.Name = "Availability";
-            this.Availability.ReadOnly = true;
-            this.Availability.Width = 450;
+            this.dgvParkingSapce.AllowUserToAddRows = false;
+            this.dgvParkingSapce.AllowUserToDeleteRows = false;
+            this.dgvParkingSapce.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvParkingSapce.Location = new System.Drawing.Point(16, 195);
+            this.dgvParkingSapce.Name = "dgvParkingSapce";
+            this.dgvParkingSapce.ReadOnly = true;
+            this.dgvParkingSapce.Size = new System.Drawing.Size(992, 505);
+            this.dgvParkingSapce.TabIndex = 22;
             // 
             // ParkingSpace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 712);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvParkingSapce);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbAvailability);
             this.Controls.Add(this.btnSave);
@@ -225,7 +201,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ParkingSpace";
             this.Text = "ParkingSpace";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.ParkingSpace_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParkingSapce)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,9 +220,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.ComboBox cmbAvailability;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Availability;
+        private System.Windows.Forms.DataGridView dgvParkingSapce;
     }
 }

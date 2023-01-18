@@ -68,5 +68,15 @@ namespace AD_project.src.views
         {
             loadForm(new Apartment(this));
         }
+
+        private void btnOccupent_Click(object sender, EventArgs e)
+        {
+            loadForm(new ChiefOccupent());
+        }
+
+        private void btnDependants_Click(object sender, EventArgs e)
+        {
+            loadForm(new Dependants());
+        }
     }
 }

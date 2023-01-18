@@ -52,8 +52,8 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvApartment = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvApartment)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -109,6 +109,7 @@
             this.cbClass.Name = "cbClass";
             this.cbClass.Size = new System.Drawing.Size(322, 28);
             this.cbClass.TabIndex = 24;
+            this.cbClass.SelectedIndexChanged += new System.EventHandler(this.cbClass_SelectedIndexChanged);
             // 
             // btnMangeBuilding
             // 
@@ -165,8 +166,10 @@
             this.cbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbState.FormattingEnabled = true;
             this.cbState.Items.AddRange(new object[] {
-            "Available",
-            "Occupied"});
+            "available",
+            "occupied by an occupant",
+            "reserved by a person",
+            "unavailable "});
             this.cbState.Location = new System.Drawing.Point(17, 226);
             this.cbState.Name = "cbState";
             this.cbState.Size = new System.Drawing.Size(470, 28);
@@ -276,6 +279,7 @@
             this.btnSave.TabIndex = 48;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnUpdate
             // 
@@ -291,6 +295,7 @@
             this.btnUpdate.TabIndex = 47;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -306,6 +311,7 @@
             this.btnDelete.TabIndex = 46;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // button3
             // 
@@ -321,24 +327,26 @@
             this.button3.TabIndex = 45;
             this.button3.Text = "Clear";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // dataGridView1
+            // dgvApartment
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 436);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(975, 225);
-            this.dataGridView1.TabIndex = 49;
+            this.dgvApartment.AllowUserToAddRows = false;
+            this.dgvApartment.AllowUserToDeleteRows = false;
+            this.dgvApartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvApartment.Location = new System.Drawing.Point(12, 436);
+            this.dgvApartment.Name = "dgvApartment";
+            this.dgvApartment.ReadOnly = true;
+            this.dgvApartment.Size = new System.Drawing.Size(975, 225);
+            this.dgvApartment.TabIndex = 49;
+            this.dgvApartment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvApartment_CellContentClick);
             // 
             // Apartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 673);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvApartment);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
@@ -367,7 +375,7 @@
             this.Name = "Apartment";
             this.Text = "Apartment";
             this.Load += new System.EventHandler(this.Apartment_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvApartment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,6 +407,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvApartment;
     }
 }

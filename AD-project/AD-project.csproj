@@ -72,6 +72,18 @@
     <Compile Include="src\views\Building.Designer.cs">
       <DependentUpon>Building.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\views\ChiefOccupent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\views\ChiefOccupent.Designer.cs">
+      <DependentUpon>ChiefOccupent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\views\Dependants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\views\Dependants.Designer.cs">
+      <DependentUpon>Dependants.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +127,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\views\Building.resx">
       <DependentUpon>Building.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\views\ChiefOccupent.resx">
+      <DependentUpon>ChiefOccupent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\views\Dependants.resx">
+      <DependentUpon>Dependants.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -169,6 +187,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\client.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

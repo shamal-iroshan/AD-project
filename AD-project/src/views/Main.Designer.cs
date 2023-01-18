@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.pnlSide = new System.Windows.Forms.Panel();
+            this.pnlTop = new System.Windows.Forms.Panel();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnDependants = new System.Windows.Forms.Button();
+            this.btnOccupent = new System.Windows.Forms.Button();
+            this.btnApartment = new System.Windows.Forms.Button();
             this.btnLease = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnlTop = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.pnlMain = new System.Windows.Forms.Panel();
-            this.btnApartment = new System.Windows.Forms.Button();
             this.pnlSide.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
@@ -42,6 +44,8 @@
             // pnlSide
             // 
             this.pnlSide.BackColor = System.Drawing.Color.White;
+            this.pnlSide.Controls.Add(this.btnDependants);
+            this.pnlSide.Controls.Add(this.btnOccupent);
             this.pnlSide.Controls.Add(this.btnApartment);
             this.pnlSide.Controls.Add(this.btnLease);
             this.pnlSide.Controls.Add(this.panel2);
@@ -50,6 +54,92 @@
             this.pnlSide.Name = "pnlSide";
             this.pnlSide.Size = new System.Drawing.Size(278, 790);
             this.pnlSide.TabIndex = 0;
+            // 
+            // pnlTop
+            // 
+            this.pnlTop.BackColor = System.Drawing.Color.White;
+            this.pnlTop.Controls.Add(this.btnClose);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Location = new System.Drawing.Point(278, 0);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(1052, 44);
+            this.pnlTop.TabIndex = 1;
+            this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(278, 44);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(1052, 746);
+            this.pnlMain.TabIndex = 2;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackgroundImage = global::AD_project.Properties.Resources.close;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnClose.Location = new System.Drawing.Point(1016, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(33, 33);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnDependants
+            // 
+            this.btnDependants.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDependants.FlatAppearance.BorderSize = 0;
+            this.btnDependants.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(179)))), ((int)(((byte)(250)))));
+            this.btnDependants.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDependants.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDependants.Image = global::AD_project.Properties.Resources.customer;
+            this.btnDependants.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDependants.Location = new System.Drawing.Point(1, 436);
+            this.btnDependants.Name = "btnDependants";
+            this.btnDependants.Size = new System.Drawing.Size(277, 60);
+            this.btnDependants.TabIndex = 3;
+            this.btnDependants.Text = "Dependants";
+            this.btnDependants.UseVisualStyleBackColor = true;
+            this.btnDependants.Click += new System.EventHandler(this.btnDependants_Click);
+            // 
+            // btnOccupent
+            // 
+            this.btnOccupent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOccupent.FlatAppearance.BorderSize = 0;
+            this.btnOccupent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(179)))), ((int)(((byte)(250)))));
+            this.btnOccupent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOccupent.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOccupent.Image = global::AD_project.Properties.Resources.client;
+            this.btnOccupent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOccupent.Location = new System.Drawing.Point(0, 370);
+            this.btnOccupent.Name = "btnOccupent";
+            this.btnOccupent.Size = new System.Drawing.Size(277, 60);
+            this.btnOccupent.TabIndex = 2;
+            this.btnOccupent.Text = "Occupent";
+            this.btnOccupent.UseVisualStyleBackColor = true;
+            this.btnOccupent.Click += new System.EventHandler(this.btnOccupent_Click);
+            // 
+            // btnApartment
+            // 
+            this.btnApartment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnApartment.FlatAppearance.BorderSize = 0;
+            this.btnApartment.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(179)))), ((int)(((byte)(250)))));
+            this.btnApartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApartment.Image = global::AD_project.Properties.Resources.apartment;
+            this.btnApartment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnApartment.Location = new System.Drawing.Point(1, 304);
+            this.btnApartment.Name = "btnApartment";
+            this.btnApartment.Size = new System.Drawing.Size(277, 60);
+            this.btnApartment.TabIndex = 1;
+            this.btnApartment.Text = "Apartment";
+            this.btnApartment.UseVisualStyleBackColor = true;
+            this.btnApartment.Click += new System.EventHandler(this.btnApartment_Click);
             // 
             // btnLease
             // 
@@ -76,58 +166,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 190);
             this.panel2.TabIndex = 0;
-            // 
-            // pnlTop
-            // 
-            this.pnlTop.BackColor = System.Drawing.Color.White;
-            this.pnlTop.Controls.Add(this.btnClose);
-            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.Location = new System.Drawing.Point(278, 0);
-            this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1052, 44);
-            this.pnlTop.TabIndex = 1;
-            this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackgroundImage = global::AD_project.Properties.Resources.close;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnClose.Location = new System.Drawing.Point(1016, 3);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(33, 33);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // pnlMain
-            // 
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(278, 44);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1052, 746);
-            this.pnlMain.TabIndex = 2;
-            // 
-            // btnApartment
-            // 
-            this.btnApartment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnApartment.FlatAppearance.BorderSize = 0;
-            this.btnApartment.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(179)))), ((int)(((byte)(250)))));
-            this.btnApartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApartment.Image = global::AD_project.Properties.Resources.apartment;
-            this.btnApartment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnApartment.Location = new System.Drawing.Point(1, 304);
-            this.btnApartment.Name = "btnApartment";
-            this.btnApartment.Size = new System.Drawing.Size(277, 60);
-            this.btnApartment.TabIndex = 1;
-            this.btnApartment.Text = "Apartment";
-            this.btnApartment.UseVisualStyleBackColor = true;
-            this.btnApartment.Click += new System.EventHandler(this.btnApartment_Click);
             // 
             // Main
             // 
@@ -157,5 +195,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnLease;
         private System.Windows.Forms.Button btnApartment;
+        private System.Windows.Forms.Button btnOccupent;
+        private System.Windows.Forms.Button btnDependants;
     }
 }
