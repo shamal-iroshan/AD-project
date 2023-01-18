@@ -106,5 +106,10 @@ namespace AD_project.src.views
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtLocation.Text = "";
+        }
     }
 }
