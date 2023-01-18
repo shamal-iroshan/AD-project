@@ -37,7 +37,6 @@ namespace AD_project.src.views
 
         private void btnManageParkingSlot_Click(object sender, EventArgs e)
         {
-            main.loadForm(new ParkingSpace(main));
         }
 
         public string getLastId()

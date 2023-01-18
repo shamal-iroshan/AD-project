@@ -84,6 +84,12 @@
     <Compile Include="src\views\Dependants.Designer.cs">
       <DependentUpon>Dependants.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\views\LeaseAggrement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\views\LeaseAggrement.Designer.cs">
+      <DependentUpon>LeaseAggrement.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\views\Dependants.resx">
       <DependentUpon>Dependants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\views\LeaseAggrement.resx">
+      <DependentUpon>LeaseAggrement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -193,6 +202,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\parking-sign.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

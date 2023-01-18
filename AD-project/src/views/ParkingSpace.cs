@@ -13,12 +13,10 @@ namespace AD_project.src.views
 {
     public partial class ParkingSpace : Form
     {
-        Main main;
 
-        public ParkingSpace(Main main)
+        public ParkingSpace()
         {
             InitializeComponent();
-            this.main = main;
         }
 
         public string getLastId()
@@ -45,7 +43,6 @@ namespace AD_project.src.views
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            main.loadForm(new Apartment(main));
         }
 
         private void ParkingSpace_Load(object sender, EventArgs e)
@@ -77,7 +74,7 @@ namespace AD_project.src.views
                 SqlCommand command = new SqlCommand("INSERT INTO parking_space(id, fee, availability) VALUES(@0, @1, @2)", _connection);
                 command.Parameters.Add(new SqlParameter("0", getLastId()));
                 command.Parameters.Add(new SqlParameter("1", fee));
-                command.Parameters.Add(new SqlParameter("1", availability));
+                command.Parameters.Add(new SqlParameter("2", availability));
                 int rows = command.ExecuteNonQuery();
                 _connection.Close();
                 if (rows > 0)

@@ -61,7 +61,7 @@ namespace AD_project.src.views
 
         private void btnLease_Click(object sender, EventArgs e)
         {
-            
+            loadForm(new LeaseAggrement());
         }
 
         private void btnApartment_Click(object sender, EventArgs e)
@@ -77,6 +77,11 @@ namespace AD_project.src.views
         private void btnDependants_Click(object sender, EventArgs e)
         {
             loadForm(new Dependants());
+        }
+
+        private void btnParking_Click(object sender, EventArgs e)
+        {
+            loadForm(new ParkingSpace());
         }
     }
 }

@@ -32,6 +32,7 @@
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnParking = new System.Windows.Forms.Button();
             this.btnDependants = new System.Windows.Forms.Button();
             this.btnOccupent = new System.Windows.Forms.Button();
             this.btnApartment = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             // pnlSide
             // 
             this.pnlSide.BackColor = System.Drawing.Color.White;
+            this.pnlSide.Controls.Add(this.btnParking);
             this.pnlSide.Controls.Add(this.btnDependants);
             this.pnlSide.Controls.Add(this.btnOccupent);
             this.pnlSide.Controls.Add(this.btnApartment);
@@ -89,6 +91,23 @@
             this.btnClose.TabIndex = 1;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnParking
+            // 
+            this.btnParking.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnParking.FlatAppearance.BorderSize = 0;
+            this.btnParking.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(179)))), ((int)(((byte)(250)))));
+            this.btnParking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnParking.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnParking.Image = global::AD_project.Properties.Resources.parking_sign;
+            this.btnParking.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnParking.Location = new System.Drawing.Point(1, 502);
+            this.btnParking.Name = "btnParking";
+            this.btnParking.Size = new System.Drawing.Size(277, 60);
+            this.btnParking.TabIndex = 4;
+            this.btnParking.Text = "Parking";
+            this.btnParking.UseVisualStyleBackColor = true;
+            this.btnParking.Click += new System.EventHandler(this.btnParking_Click);
             // 
             // btnDependants
             // 
@@ -197,5 +216,6 @@
         private System.Windows.Forms.Button btnApartment;
         private System.Windows.Forms.Button btnOccupent;
         private System.Windows.Forms.Button btnDependants;
+        private System.Windows.Forms.Button btnParking;
     }
 }

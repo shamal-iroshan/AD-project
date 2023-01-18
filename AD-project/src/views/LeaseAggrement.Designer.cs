@@ -52,6 +52,9 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLease)).BeginInit();
             this.SuspendLayout();
             // 
@@ -247,6 +250,10 @@
             // dgvLease
             // 
             this.dgvLease.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLease.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.type,
+            this.Amount,
+            this.Description});
             this.dgvLease.Location = new System.Drawing.Point(21, 399);
             this.dgvLease.Name = "dgvLease";
             this.dgvLease.Size = new System.Drawing.Size(979, 221);
@@ -266,6 +273,7 @@
             this.btnSave.TabIndex = 88;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnAddPayment
             // 
@@ -281,6 +289,7 @@
             this.btnAddPayment.TabIndex = 87;
             this.btnAddPayment.Text = "AddPayment";
             this.btnAddPayment.UseVisualStyleBackColor = false;
+            this.btnAddPayment.Click += new System.EventHandler(this.btnAddPayment_Click);
             // 
             // btnClear
             // 
@@ -312,6 +321,24 @@
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(470, 26);
             this.dtpEnd.TabIndex = 90;
+            // 
+            // type
+            // 
+            this.type.HeaderText = "PaymentType";
+            this.type.Name = "type";
+            this.type.Width = 200;
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.Width = 200;
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.Width = 500;
             // 
             // LeaseAggrement
             // 
@@ -345,6 +372,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LeaseAggrement";
             this.Text = "LeaseAggrement";
+            this.Load += new System.EventHandler(this.LeaseAggrement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLease)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -377,5 +405,8 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
     }
 }
