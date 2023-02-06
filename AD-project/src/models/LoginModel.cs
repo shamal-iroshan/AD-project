@@ -10,6 +10,7 @@ namespace AD_project.src.models
     {
         private string username;
         private string password;
+        private string role;
 
         public LoginModel()
         {
@@ -21,8 +22,15 @@ namespace AD_project.src.models
             this.Password = password;
         }
 
+        public LoginModel(string username, string password, string role)
+        {
+            this.Username = username;
+            this.Password = password;
+            this.Role = role;
+        }
+
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
-
+        public string Role { get => role; set => role = value; }
     }
 }

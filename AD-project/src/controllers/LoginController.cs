@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AD_project.src.controllers
 {
@@ -17,25 +18,24 @@ namespace AD_project.src.controllers
         }
 
 
-        public Boolean checkLogin(LoginModel loginModel) 
+        public LoginModel checkLogin(LoginModel loginModel) 
         {
             SqlConnection _connection = new SqlConnection("Data Source=DESKTOP-QD5TKKH;Initial Catalog=E-Apartments;Integrated Security=True");
             _connection.Open();
-            SqlCommand command = new SqlCommand("SELECT * FROM employee WHERE user_name=@0 AND password=@1", _connection);
+            SqlCommand command = new SqlCommand("SELECT * FROM login WHERE user_name=@0 AND password=@1", _connection);
             command.Parameters.Add(new SqlParameter("0", loginModel.Username));
             command.Parameters.Add(new SqlParameter("1", loginModel.Password));
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataSet dataSet = new DataSet();
-            adapter.Fill(dataSet);
-            _connection.Close();
-            int count = dataSet.Tables[0].Rows.Count;
-            if (count == 1 )
+            LoginModel loginSuccessModel = new LoginModel();
+            using (SqlDataReader reader = command.ExecuteReader())
             {
-                return true;
-            } else
-            {
-                return false;
+                if (reader.Read())
+                {
+                    loginSuccessModel.Username = reader["user_name"].ToString();
+                    loginSuccessModel.Role = reader["role"].ToString();
+                    _connection.Close();
+                }
             }
+            return loginSuccessModel;
         }
     }
 }

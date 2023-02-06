@@ -53,12 +53,22 @@ namespace AD_project
             }
             try
             {
-                bool loginSuccess = new LoginController().checkLogin(model);
-                if (loginSuccess)
+                LoginModel successModel =  new LoginController().checkLogin(model);
+                if(successModel.Role == "admin")
                 {
                     Hide();
-                    Main main = new Main();
-                    main.Show();
+                    AdminMain adminMain = new AdminMain();
+                    adminMain.Show();
+                } else if(successModel.Role == "employee")
+                {
+                    Hide();
+                    EmployeeMain employeeMain = new EmployeeMain();
+                    employeeMain.Show();
+                } else if (successModel.Role == "customer")
+                {
+                    Hide();
+                    CustomerMain customerMain = new CustomerMain();
+                    customerMain.Show();
                 } else
                 {
                     MessageBox.Show("Login failed");

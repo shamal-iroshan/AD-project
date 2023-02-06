@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AD_project.src.controllers;
+using AD_project.src.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,32 +15,10 @@ namespace AD_project.src.views
 {
     public partial class ParkingSpace : Form
     {
-
+        string currentlyOperating;
         public ParkingSpace()
         {
             InitializeComponent();
-        }
-
-        public string getLastId()
-        {
-            SqlConnection _connection = new SqlConnection("Data Source=DESKTOP-QD5TKKH;Initial Catalog=E-Apartments;Integrated Security=True");
-            _connection.Open();
-            SqlCommand command = new SqlCommand("SELECT id FROM parking_space ORDER BY id DESC", _connection);
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.Read())
-            {
-                String tempID = reader.GetString(0);
-                String[] split = tempID.Split('P');
-                Int32 id = Int32.Parse(split[1]);
-                id++;
-                if (id < 10) return "P00" + id;
-                else if (id < 100) return "P0" + id;
-                else return "P" + id;
-            }
-            else
-            {
-                return "P001";
-            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -47,10 +27,7 @@ namespace AD_project.src.views
 
         private void ParkingSpace_Load(object sender, EventArgs e)
         {
-            SqlConnection _connection = new SqlConnection("Data Source=DESKTOP-QD5TKKH;Initial Catalog=E-Apartments;Integrated Security=True");
-            _connection.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM parking_space", _connection);
-            _connection.Close();
+            SqlDataAdapter adapter = new ParkingController().getAllParking();
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
             dgvParkingSapce.DataSource = dataTable;
@@ -62,22 +39,15 @@ namespace AD_project.src.views
             {
                 double fee = Double.Parse(txtFee.Text);
                 string availability = cmbAvailability.Text;
-
-                if (fee == 0 || availability == "")
+                string apartmentId = cbApartment.Text;
+                ParkingSpaceModel model = new ParkingSpaceModel(fee, availability, apartmentId);
+                if (fee == 0 || availability == "" || apartmentId == "")
                 {
                     MessageBox.Show("Please check values again");
                     return;
                 }
-
-                SqlConnection _connection = new SqlConnection("Data Source=DESKTOP-QD5TKKH;Initial Catalog=E-Apartments;Integrated Security=True");
-                _connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO parking_space(id, fee, availability) VALUES(@0, @1, @2)", _connection);
-                command.Parameters.Add(new SqlParameter("0", getLastId()));
-                command.Parameters.Add(new SqlParameter("1", fee));
-                command.Parameters.Add(new SqlParameter("2", availability));
-                int rows = command.ExecuteNonQuery();
-                _connection.Close();
-                if (rows > 0)
+                bool success = new ParkingController().saveParkingSpace(model);
+                if (success)
                 {
                     txtFee.Text = "";
                     cmbAvailability.Text = "";
@@ -91,6 +61,63 @@ namespace AD_project.src.views
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double fee = Double.Parse(txtFee.Text);
+                string availability = cmbAvailability.Text;
+                string apartmentId = cbApartment.Text;
+                ParkingSpaceModel model = new ParkingSpaceModel(currentlyOperating, fee, availability, apartmentId);
+                if (fee == 0 || availability == "" || apartmentId == "")
+                {
+                    MessageBox.Show("Please check values again");
+                    return;
+                }
+                bool success = new ParkingController().updateParkingSpace(model);
+                if (success)
+                {
+                    txtFee.Text = "";
+                    cmbAvailability.Text = "";
+                    MessageBox.Show("Updated successfully..!");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong..!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            bool success = new ParkingController().deleteParkingSpace(currentlyOperating);
+            if (success)
+            {
+                txtFee.Text = "";
+                cmbAvailability.Text = "";
+                MessageBox.Show("Deleted successfully..!");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong..!");
+            }
+        }
+
+        private void dgvParkingSapce_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvParkingSapce.Rows[e.RowIndex];
+                txtFee.Text = row.Cells[1].Value.ToString();
+                currentlyOperating = row.Cells[0].Value.ToString();
             }
         }
     }

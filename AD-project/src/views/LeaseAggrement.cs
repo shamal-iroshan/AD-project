@@ -36,13 +36,6 @@ namespace AD_project.src.views
             cbChiefOccupent.DisplayMember = "name";
             cbChiefOccupent.ValueMember = "id";
 
-            SqlDataAdapter adapter2 = new SqlDataAdapter("SELECT * FROM parking_space", _connection);
-            DataTable dataTable2 = new DataTable();
-            adapter2.Fill(dataTable2);
-            cbParkingSapce1.DataSource = dataTable2;
-            cbParkingSapce1.DisplayMember = "id";
-            cbParkingSapce1.ValueMember = "id";
-
             SqlDataAdapter adapter3 = new SqlDataAdapter("SELECT * FROM parking_space", _connection);
             DataTable dataTable3 = new DataTable();
             adapter3.Fill(dataTable3);
@@ -74,7 +67,6 @@ namespace AD_project.src.views
             {
                 String apartment = cbApartment.Text;
                 String occupent = cbChiefOccupent.GetItemText(cbChiefOccupent.SelectedValue);
-                String parking1 = cbParkingSapce1.Text;
                 String parking2 = cbParkingSapce2.Text;
                 String start = dtpStart.Text;
                 String end = dtpEnd.Text;
@@ -82,7 +74,7 @@ namespace AD_project.src.views
                 int lastId;
 
 
-                if (apartment == "" || occupent == "" || parking1 == "" || start == "" || end == "")
+                if (apartment == "" || occupent == "" || start == "" || end == "")
                 {
                     MessageBox.Show("Please check values again");
                     return;
@@ -113,27 +105,24 @@ namespace AD_project.src.views
 
                 String oc = "Occupied";
 
-                SqlCommand command2 = new SqlCommand("UPDATE parking_space set lease_aggrement_id='" + lastId++ + "', availability='Occupied' WHERE id='" + parking1 + "'", _connection1);
-                command2.ExecuteNonQuery();
-
                 if (parking2 != "Select Parking")
                 {
 
-                    SqlCommand command3 = new SqlCommand("UPDATE parking_space set lease_aggrement_id='" + lastId++ + "', availability='Occupied' WHERE id='" + parking1 + "'", _connection1);
+                    SqlCommand command3 = new SqlCommand("UPDATE parking_space set lease_aggrement_id='" + lastId++ + "', availability='Occupied' WHERE id='" + parking2 + "'", _connection1);
                     command3.ExecuteNonQuery();
                 }
-
-                for (int i = 0; i < dgvLease.Rows.Count; i++)
+                lastId++;
+                for (int i = 0; i < dgvLease.Rows.Count-1; i++)
                 {
                     MessageBox.Show(dgvLease.Rows[i].Cells["type"].Value.ToString());
-                    //SqlCommand command4 = new SqlCommand("INSERT INTO payment( type, amount, description, date, lease_aggrement_id) VALUES(@0, @1, @2, @3, @4)", _connection1);
-                    //double amount = Double.Parse(dgvLease.Rows[i].Cells["Amount"].Value.ToString());
-                    //command4.Parameters.Add(new SqlParameter("0", dgvLease.Rows[i].Cells["type"].Value));
-                    //command4.Parameters.Add(new SqlParameter("1", amount));
-                    //command4.Parameters.Add(new SqlParameter("2", dgvLease.Rows[i].Cells["Description"].Value));
-                    //command4.Parameters.Add(new SqlParameter("3", SqlDbType.Date)).Value = DateTime.Now;
-                    //command4.Parameters.Add(new SqlParameter("4", lastId++));
-                    //command4.ExecuteNonQuery();
+                    SqlCommand command4 = new SqlCommand("INSERT INTO payment( type, amount, description, date, lease_aggrement_id) VALUES(@0, @1, @2, @3, @4)", _connection1);
+                    double amount = Double.Parse(dgvLease.Rows[i].Cells["Amount"].Value.ToString());
+                    command4.Parameters.Add(new SqlParameter("0", dgvLease.Rows[i].Cells["type"].Value.ToString()));
+                    command4.Parameters.Add(new SqlParameter("1", amount));
+                    command4.Parameters.Add(new SqlParameter("2", dgvLease.Rows[i].Cells["Description"].Value.ToString()));
+                    command4.Parameters.Add(new SqlParameter("3", SqlDbType.Date)).Value = DateTime.Now;
+                    command4.Parameters.Add(new SqlParameter("4", lastId));
+                    command4.ExecuteNonQuery();
                 }
 
                 _connection.Close();

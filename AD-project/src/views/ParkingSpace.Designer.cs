@@ -38,6 +38,8 @@
             this.cmbAvailability = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvParkingSapce = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbApartment = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParkingSapce)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +51,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(604, 144);
+            this.btnSave.Location = new System.Drawing.Point(609, 188);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 39);
             this.btnSave.TabIndex = 19;
@@ -65,12 +67,13 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(705, 144);
+            this.btnUpdate.Location = new System.Drawing.Point(710, 188);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(95, 39);
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -80,12 +83,13 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(806, 144);
+            this.btnDelete.Location = new System.Drawing.Point(811, 188);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(95, 39);
             this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClear
             // 
@@ -95,7 +99,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
-            this.btnClear.Location = new System.Drawing.Point(907, 144);
+            this.btnClear.Location = new System.Drawing.Point(912, 188);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(95, 39);
             this.btnClear.TabIndex = 16;
@@ -160,17 +164,42 @@
             this.dgvParkingSapce.AllowUserToAddRows = false;
             this.dgvParkingSapce.AllowUserToDeleteRows = false;
             this.dgvParkingSapce.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvParkingSapce.Location = new System.Drawing.Point(16, 195);
+            this.dgvParkingSapce.Location = new System.Drawing.Point(16, 244);
             this.dgvParkingSapce.Name = "dgvParkingSapce";
             this.dgvParkingSapce.ReadOnly = true;
-            this.dgvParkingSapce.Size = new System.Drawing.Size(992, 505);
+            this.dgvParkingSapce.Size = new System.Drawing.Size(992, 456);
             this.dgvParkingSapce.TabIndex = 22;
+            this.dgvParkingSapce.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParkingSapce_CellContentClick);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 128);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 20);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Apartment";
+            // 
+            // cbApartment
+            // 
+            this.cbApartment.AutoCompleteCustomSource.AddRange(new string[] {
+            "Available",
+            "Reserved"});
+            this.cbApartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbApartment.FormattingEnabled = true;
+            this.cbApartment.Location = new System.Drawing.Point(16, 151);
+            this.cbApartment.Name = "cbApartment";
+            this.cbApartment.Size = new System.Drawing.Size(471, 28);
+            this.cbApartment.TabIndex = 23;
             // 
             // ParkingSpace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 712);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cbApartment);
             this.Controls.Add(this.dgvParkingSapce);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbAvailability);
@@ -203,5 +232,7 @@
         private System.Windows.Forms.ComboBox cmbAvailability;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvParkingSapce;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbApartment;
     }
 }

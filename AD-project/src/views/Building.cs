@@ -16,10 +16,10 @@ namespace AD_project.src.views
 {
     public partial class Building : Form
     {
-        Main main;
+        AdminMain main;
         String currentlyOperating;
 
-        public Building(Main main)
+        public Building(AdminMain main)
         {
             InitializeComponent();
             this.main = main;
@@ -83,9 +83,16 @@ namespace AD_project.src.views
             }
             try
             {
-                new BuildingController().updateBuilding(model);
-                txtLocation.Text = "";
-                MessageBox.Show("Updated successfully..!");
+                bool success = new BuildingController().updateBuilding(model);
+                if (success)
+                {
+                    txtLocation.Text = "";
+                    MessageBox.Show("Updated successfully..!");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong..!");
+                }
             }
             catch (Exception ex)
             {
@@ -97,9 +104,16 @@ namespace AD_project.src.views
         {
             try
             {
-                new BuildingController().deleteBuilding(currentlyOperating);
-                txtLocation.Text = "";
-                MessageBox.Show("Deleted successfully..!");
+                bool success = new BuildingController().deleteBuilding(currentlyOperating);
+                if (success)
+                {
+                    txtLocation.Text = "";
+                    MessageBox.Show("Updated successfully..!");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong..!");
+                }
             }
             catch (Exception ex)
             {

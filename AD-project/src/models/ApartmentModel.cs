@@ -11,7 +11,6 @@ namespace AD_project.src.models
         private string id;
         private string building_id;
         private string class_id;
-        private string parking_id;
         private string state;
         private int floor_area;
         private double monthly_rent;
@@ -23,11 +22,10 @@ namespace AD_project.src.models
         {
         }
 
-        public ApartmentModel(string building_id, string class_id, string parking_id, string state, int floor_area, double monthly_rent, double reservation_fee, double refundable_deposit, int max_oc_no)
+        public ApartmentModel(string building_id, string class_id, string state, int floor_area, double monthly_rent, double reservation_fee, double refundable_deposit, int max_oc_no)
         {
             this.Building_id = building_id;
             this.Class_id = class_id;
-            this.Parking_id = parking_id;
             this.State = state;
             this.Floor_area = floor_area;
             this.Monthly_rent = monthly_rent;
@@ -36,12 +34,11 @@ namespace AD_project.src.models
             this.Max_oc_no = max_oc_no;
         }
 
-        public ApartmentModel(string id, string building_id, string class_id, string parking_id, string state, int floor_area, double monthly_rent, double reservation_fee, double refundable_deposit, int max_oc_no)
+        public ApartmentModel(string id, string building_id, string class_id, string state, int floor_area, double monthly_rent, double reservation_fee, double refundable_deposit, int max_oc_no)
         {
             this.Id = id;
             this.Building_id = building_id;
             this.Class_id = class_id;
-            this.Parking_id = parking_id;
             this.State = state;
             this.Floor_area = floor_area;
             this.Monthly_rent = monthly_rent;
@@ -53,7 +50,6 @@ namespace AD_project.src.models
         public string Id { get => id; set => id = value; }
         public string Building_id { get => building_id; set => building_id = value; }
         public string Class_id { get => class_id; set => class_id = value; }
-        public string Parking_id { get => parking_id; set => parking_id = value; }
         public string State { get => state; set => state = value; }
         public int Floor_area { get => floor_area; set => floor_area = value; }
         public double Monthly_rent { get => monthly_rent; set => monthly_rent = value; }

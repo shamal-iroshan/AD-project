@@ -68,25 +68,35 @@ namespace AD_project.src.controllers
             return command;
         }
 
-        public void updateBuilding(BuildingModel model)
+        public bool updateBuilding(BuildingModel model)
         {
             SqlConnection _connection = new SqlConnection("Data Source=DESKTOP-QD5TKKH;Initial Catalog=E-Apartments;Integrated Security=True");
             _connection.Open();
             SqlCommand command = new SqlCommand("UPDATE building set location=@0 WHERE id=@1", _connection);
             command.Parameters.Add(new SqlParameter("0", model.Location));
             command.Parameters.Add(new SqlParameter("1", model.Id));
-            command.ExecuteReader();
+            int rows = command.ExecuteNonQuery();
             _connection.Close();
+            if (rows > 0)
+            {
+                return true;
+            }
+            return false;
         }
 
-        public void deleteBuilding(String id) 
+        public bool deleteBuilding(String id) 
         {
             SqlConnection _connection = new SqlConnection("Data Source=DESKTOP-QD5TKKH;Initial Catalog=E-Apartments;Integrated Security=True");
             _connection.Open();
             SqlCommand command = new SqlCommand("DELETE FROM building WHERE id=@0", _connection);
             command.Parameters.Add(new SqlParameter("0", id));
-            command.ExecuteReader();
+            int rows = command.ExecuteNonQuery();
             _connection.Close();
+            if (rows > 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

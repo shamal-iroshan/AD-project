@@ -1,4 +1,5 @@
 ﻿using AD_project.src.controllers;
+using AD_project.src.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,10 @@ namespace AD_project.src.views
 {
     public partial class ApartmentClass : Form
     {
-        Main main;
+        AdminMain main;
         String currentlyOperating;
 
-        public ApartmentClass(Main main)
+        public ApartmentClass(AdminMain main)
         {
             InitializeComponent();
             this.main = main;
@@ -31,13 +32,17 @@ namespace AD_project.src.views
 
         private void ApartmentClass_Load(object sender, EventArgs e)
         {
-            SqlConnection _connection = new SqlConnection("Data Source=DESKTOP-QD5TKKH;Initial Catalog=E-Apartments;Integrated Security=True");
-            _connection.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM apartment_class", _connection);
-            _connection.Close();
-            DataTable dataTable = new DataTable();
-            adapter.Fill(dataTable);
-            dgvClasses.DataSource = dataTable;
+            try
+            {
+                SqlDataAdapter adapter = new ApartmnetClassController().getAllClasses();
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                dgvClasses.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -49,16 +54,12 @@ namespace AD_project.src.views
                 MessageBox.Show("Please check values again");
                 return;
             }
+            ApartmentClassModel model = new ApartmentClassModel(title, description);
+
             try
             {
-                SqlConnection _connection = new SqlConnection("Data Source=DESKTOP-QD5TKKH;Initial Catalog=E-Apartments;Integrated Security=True");
-                _connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO apartment_class(title, description) VALUES(@0, @1)", _connection);
-                command.Parameters.Add(new SqlParameter("0", title));
-                command.Parameters.Add(new SqlParameter("1", description));
-                int rows = command.ExecuteNonQuery();
-                _connection.Close();
-                if (rows > 0)
+                bool success = new ApartmnetClassController().saveClass(model);
+                if (success)
                 {
                     txtTitle.Text = "";
                     txtDescription.Text = "";
@@ -84,20 +85,21 @@ namespace AD_project.src.views
                 MessageBox.Show("Please check values again");
                 return;
             }
+            ApartmentClassModel model = new ApartmentClassModel(currentlyOperating, title, description);
 
             try
             {
-                SqlConnection _connection = new SqlConnection("Data Source=DESKTOP-QD5TKKH;Initial Catalog=E-Apartments;Integrated Security=True");
-                _connection.Open();
-                SqlCommand command = new SqlCommand("UPDATE apartment_class set title=@0, description=@1 WHERE id=@2", _connection);
-                command.Parameters.Add(new SqlParameter("0", title));
-                command.Parameters.Add(new SqlParameter("1", description));
-                command.Parameters.Add(new SqlParameter("2", currentlyOperating));
-                command.ExecuteReader();
-                _connection.Close();
-                txtTitle.Text = "";
-                txtDescription.Text = "";
-                MessageBox.Show("Updated successfully..!");
+                bool success = new ApartmnetClassController().updateClass(model);
+                if (success)
+                {
+                    txtTitle.Text = "";
+                    txtDescription.Text = "";
+                    MessageBox.Show("Updated successfully..!");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong..!");
+                }
             }
             catch (Exception ex)
             {
@@ -109,15 +111,17 @@ namespace AD_project.src.views
         {
             try
             {
-                SqlConnection _connection = new SqlConnection("Data Source=DESKTOP-QD5TKKH;Initial Catalog=E-Apartments;Integrated Security=True");
-                _connection.Open();
-                SqlCommand command = new SqlCommand("DELETE FROM apartment_class WHERE id=@0", _connection);
-                command.Parameters.Add(new SqlParameter("0", currentlyOperating));
-                command.ExecuteReader();
-                _connection.Close();
-                txtTitle.Text = "";
-                txtDescription.Text = "";
-                MessageBox.Show("Deleted successfully..!");
+                bool success = new ApartmnetClassController().deleteClass(currentlyOperating);
+                if (success)
+                {
+                    txtTitle.Text = "";
+                    txtDescription.Text = "";
+                    MessageBox.Show("Deleted successfully..!");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong..!");
+                }
             }
             catch (Exception ex)
             {

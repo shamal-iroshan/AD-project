@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace AD_project.src.views
 {
-    public partial class Main : Form
+    public partial class EmployeeMain : Form
     {
-        public Main()
+        public EmployeeMain()
         {
             InitializeComponent();
         }
@@ -66,7 +66,6 @@ namespace AD_project.src.views
 
         private void btnApartment_Click(object sender, EventArgs e)
         {
-            loadForm(new Apartment(this));
         }
 
         private void btnOccupent_Click(object sender, EventArgs e)
@@ -82,6 +81,22 @@ namespace AD_project.src.views
         private void btnParking_Click(object sender, EventArgs e)
         {
             loadForm(new ParkingSpace());
+        }
+
+        private void btnWaitingList_Click(object sender, EventArgs e)
+        {
+            loadForm(new WaitingList());
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            loadForm(new Search());
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new Login().Show();
         }
     }
 }
